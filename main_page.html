@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: rgb(207, 197, 207);
+    }
+    .status_bar {
+        margin-top: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .outer_box {
+        border: 2px solid purple;
+        width: 700px;
+        height: 5px;
+    }
+
+    .inner_box {
+        width: 10%;
+        height: 5px;
+        background-color: purple;
+    }
+
+    .loading {
+        font-size: 25px;
+        margin: 5px 0px;
+        border: none;
+    }
+
+    header {
+        background-color: rgb(54, 4, 54);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
+    }
+
+    nav {
+        background-color: rgb(202, 198, 202);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
+        text-align: center;
+        margin: 2px 0px;
+        margin-left: 50px;
+        border-radius: 20px;
+    }
+
+    a {
+       text-decoration: none;
+       color: black;
+    }
+
+    a:hover {
+        color: rgb(243, 38, 243);
+    }
+
+    .media_nav {
+        display: none;
+    }
+
+    p {         
+        padding: 0px 5px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 700px;
+    }
+
+    .media_button {
+        margin-left: 50px;
+        padding: 4px 15px;
+        display: none;
+    }
+
+    @media(min-width:768px) and (max-width:1290px) {
+        header {
+           font-size: 12px;
+        }
+        nav {
+            gap: 0vh;
+            font-size: 12px;
+            margin-left: 25px;
+        }
+        iframe {
+            aspect-ratio: 1/1;
+            width: 100%;
+        }
+    }
+
+    @media (max-width:768px) {
+        header {
+           font-size: 10px;
+        }
+        .outer_box {
+            width: 450px; 
+        }
+        
+        header {
+            gap: 1vh;
+        }
+        
+        nav {
+            display: none;
+        }
+
+        .media_nav {
+            margin-left: 75%;
+            border-radius: 0px;
+            text-align: right;
+        }
+
+        p {
+            border-top: 2px solid rgb(54, 4, 54);
+            border-bottom: 2px solid rgb(54, 4, 54);
+            margin: 5px 0px;
+        }
+
+        .media_button {
+            display: flex;
+        }
+
+        iframe {
+            aspect-ratio: 1/1.3;
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="status_bar">
+        <p class="loading">Loading...</p>
+        <div class="outer_box">
+            <div class="inner_box"></div>
+        </div>
+        <p class="loading"><span>0</span>%</p>
+    </div>
+
+    <div class="content">
+        <header>
+            <h3>The BABANIJI Cousins</h3>
+            <h2>Great Minds</h2>
+            <nav>
+                <a href="landing_page.html" target="display"><p>Home</p></a>
+                <a href="0_babaniji_senior.html" target="display"><p>The Babaniji's <br> (Senior)</p></a>
+                <a href="1_famutimi.html" target="display"><p>The Famutimi's</p></a>
+                <a href="2_turton.html" target="display"><p>The Turton's</p></a>
+                <a href="3_olatoye.html" target="display"><p>The Olatoye's</p></a>
+                <a href="4_babaniji_junior.html" target="display"><p>The Babaniji's <br> (Junior)</p></a>
+                <a href="5_onolaja.html" target="display"><p>The Onalaja's</p></a>
+                <a href="album_page.html" target="display"><p>Album</p></a>
+            </nav>
+            <button type="button" class="media_button" onclick="toggle()">&#9776;</button>
+        </header>
+            <nav class="media_nav">
+                <a href="landing_page.html" target="display"><p>Home</p></a>
+                <a href="0_babaniji_senior.html" target="display"><p>The Babaniji's <br> (Senior)</p></a>
+                <a href="1_famutimi.html" target="display"><p>The Famutimi's</p></a>
+                <a href="2_turton.html" target="display"><p>The Turton's</p></a>
+                <a href="3_olatoye.html" target="display"><p>The Olatoye's</p></a>
+                <a href="4_babaniji_junior.html" target="display"><p>The Babaniji's <br> (Junior)</p></a>
+                <a href="5_onolaja.html" target="display"><p>The Onalaja's</p></a>
+                <a href="album_page.html" target="display"><p>Album</p></a>
+            </nav>
+            <iframe src="landing_page.html" frameborder="0" name="display" title="display"></iframe> 
+    </div>
+    
+</body>
+
+<script src="jQuery.js"></script>
+<script>
+    document.querySelector(".content").style.display = "none";
+
+    let num = 0;
+
+    function load() {
+        num++;
+        if (num > 100) {
+            document.querySelector(".content").style.display = "block";
+            document.querySelector(".status_bar").style.display = "none";
+            return;
+        }
+        setTimeout(load, 20);
+        document.querySelector("span").innerHTML = num;
+        document.querySelector(".inner_box").style.width = num + "%"; 
+    }
+    load();
+
+    $(".media_button").click(function () {
+        $(".media_nav").toggle();
+        $("iframe").hide();
+    })
+
+    $("p").click (function () {
+        $(".media_nav").hide();
+        $("iframe").show();
+    })
+</script>
+</html>

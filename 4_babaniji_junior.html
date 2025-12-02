@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>Babaniji (Junior)</title>
+</head>
+
+</style>
+
+<body>
+    <div class="container">
+        <button type="button" onclick="prev()">&lt</button>
+        <div id="profile_0" class="profile">
+            <div class="first">
+                <h1>The BABANIJI's (Junior).</h1>
+            </div>
+        </div>
+
+        <div id="profile_1" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/41_adesola_babaniji.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>Name:</h3>
+                <p>Adesola Adebayo Babaniji (aka DaBOG).</p> <br>
+                <h3>Birthday:</h3>
+                <p>March, 3.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_2" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/42_adelola_babaniji.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>Name:</h3>
+                <p>Adelola Adefoluke Babaniji.</p> <br>
+                <h3>Birthday:</h3>
+                <p>February, 8.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_3" class="profile">
+            <div class="profile_picture">
+                <img src="" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>Name:</h3>
+                <p>Adekoyejo Babaniji.</p> <br>
+                <h3>Birthday:</h3>
+                <p>April, 17.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_4" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/44_adetoro_babaniji.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>Name:</h3>
+                <p>Adetoro Adetoun Babaniji.</p> <br>
+                <h3>Birthday:</h3>
+                <p>May, 29.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_5" class="profile">
+            <div class="last">
+                <h1>The End.</h1>
+            </div>
+        </div>
+        <button type="button" onclick="next()">&gt</button>     
+    </div>
+</body>
+
+<script src="jQuery.js"></script>
+<script>
+    $(".profile").hide();
+    $("#profile_0").show();
+
+    let num = 0;
+
+    function next() {
+        num++;
+        if (num > 5) {
+            num = 0;
+        }
+        $(".profile").hide();
+        $("#profile_" + num).show();
+    }
+
+    function prev() {
+        num--;
+        if (num < 0) {
+            num = 5;
+        }
+        $(".profile").hide();
+        $("#profile_" + num).show();
+    }
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowUp") { 
+                next();                      
+        }
+
+        if (event.key === "ArrowDown") { 
+                prev();                      
+        }
+
+        if (event.key === "ArrowRight") { 
+                next();                      
+        }
+
+        if (event.key === "ArrowLeft") { 
+                next();                      
+        }
+    })
+</script>
+</html>

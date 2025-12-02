@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>Famutimi</title>
+</head>
+<body>
+    <div class="container">
+        <button type="button" onclick="prev()">&lt</button>
+        <div id="profile_0" class="profile">
+            <div class="first">
+                <h1>The FAMUTIMI's.</h1>
+            </div>
+        </div>
+
+        <div id="profile_1" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/11_eliot_odunayo_famutimi.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>Name:</h3>
+                <p>Eliot Odunayo Famutimi.</p> <br>
+                <h3>Birthday:</h3>
+                <p>April, 10.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_2" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/12_elsie_famutimi_hardy.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>Name:</h3>
+                <p>Elsie Famutimi Hardy.</p> <br>
+                <h3>Birthday:</h3>
+                <p>June, 18.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_3" class="profile">
+            <div class="profile_picture">
+                <img src="" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>First Name:</h3>
+                <p>Ernest Famutimi.</p> <br>
+                <h3>Birthday:</h3>
+                <p>Jamuary, 1.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_4" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/13_ebenezer_famutimi.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>First Name:</h3>
+                <p>Ebenezer Famutimi.</p> <br>
+                <h3>Birthday:</h3>
+                <p>May, 2.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_5" class="profile">
+            <div class="last">
+                <h1>The End.</h1>
+            </div>
+        </div>
+        <button type="button" onclick="next()">&gt</button>     
+    </div>
+</body>
+
+<script src="jQuery.js"></script>
+<script>
+    $(".profile").hide();
+    $("#profile_0").show();
+
+    let num = 0;
+
+    function next() {
+        num++;
+        if (num > 5) {
+            num = 0;
+        }
+        $(".profile").hide();
+        $("#profile_" + num).show();
+    }
+
+    function prev() {
+        num--;
+        if (num < 0) {
+            num = 5;
+        }
+        $(".profile").hide();
+        $("#profile_" + num).show();
+    }
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowUp") { 
+                next();                      
+        }
+
+        if (event.key === "ArrowDown") { 
+                prev();                      
+        }
+
+        if (event.key === "ArrowRight") { 
+                next();                      
+        }
+
+        if (event.key === "ArrowLeft") { 
+                next();                      
+        }
+    })
+</script>
+</html>

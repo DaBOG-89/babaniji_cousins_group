@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>Babaniji (Senior)</title>
+</head>
+
+<body>
+    <div class="container">
+        <button type="button" onclick="prev()">&lt</button>
+        <div id="profile_0" class="profile">
+            <div class="first">
+                <h1>The BABANIJI's (Senior).</h1>
+            </div>
+        </div>
+
+        <div id="profile_1" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/01_eniola_adewala_babaniji.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>Name:</h3>
+                <p>Eniola Adewale Babaniji.</p> <br>
+                <h3>Birthday:</h3>
+                <p>December, 31.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_2" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/02_adesope_eyitayo_babaniji.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>Name:</h3>
+                <p>Eyitayo Adesope Babaniji.</p> <br>
+                <h3>Birthday:</h3>
+                <p>March, 25.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_3" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/03_titilayo_ololade_babaniji.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>First Name:</h3>
+                <p>Titilayo Oluwatoyin Ololade Babaniji (Lakan-Afariogun).</p> <br>
+                <h3>Birthday:</h3>
+                <p>July, 20.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_4" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/04_oluseyi_samson_babaniji.jpg" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>First Name:</h3>
+                <p>Samson Oluseyi Babaniji.</p> <br>
+                <h3>Birthday:</h3>
+                <p>June, 27.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_5" class="profile">
+            <div class="profile_picture">
+                <img src="pictures/05_imoleayo_samuel_babaniji.png" alt="">
+            </div>
+            <div class="profile_data">
+                <h3>First Name:</h3>
+                <p>Samuel Imoleayo Babaniji.</p> <br>
+                <h3>Birthday:</h3>
+                <p>December, 31st.</p> <br>
+            </div>  
+        </div>
+
+        <div id="profile_6" class="profile">
+            <div class="last">
+                <h1>The End.</h1>
+            </div>
+        </div>
+        <button type="button" onclick="next()">&gt</button>     
+    </div>
+</body>
+<script src="profile.js"></script>
+<script src="jQuery.js"></script>
+<script>
+    $(".profile").hide();
+    $("#profile_0").show();
+
+    let num = 0;
+
+    function next() {
+        num++;
+        if (num > 6) {
+            num = 0;
+        }
+        $(".profile").hide();
+        $("#profile_" + num).show();
+    }
+
+    function prev() {
+        num--;
+        if (num < 0) {
+            num = 6;
+        }
+        $(".profile").hide();
+        $("#profile_" + num).show();
+    }
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowUp") { 
+                next();                      
+        }
+
+        if (event.key === "ArrowDown") { 
+                prev();                      
+        }
+
+        if (event.key === "ArrowRight") { 
+                next();                      
+        }
+
+        if (event.key === "ArrowLeft") { 
+                next();                      
+        }
+    })
+</script>
+</html>
