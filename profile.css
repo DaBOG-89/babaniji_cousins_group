@@ -34,6 +34,8 @@ img {
 }
 
 .profile_data {
+    background-color: rgb(48, 2, 48);
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
