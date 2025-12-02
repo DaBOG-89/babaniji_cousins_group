@@ -9,7 +9,7 @@ body {
 
 .container {
     margin-top: 60px;
-    border: 2px solid black;
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,11 +24,10 @@ body {
 }
 
 .profile_picture {
-    border: 2px solid black;
+
 }
 
 img {
-    border: 2px solid blueviolet;
     aspect-ratio: 1/1;
     width: 450px;
     margin: 5px;
@@ -40,7 +39,6 @@ img {
     justify-content: center;
     aspect-ratio: 1/1;
     width: 250px;
-    border: 2px solid black;
     padding: 25px;
 }
 
@@ -62,7 +60,7 @@ button:hover {
 }
 
 .first, .last {
-    border: 2px solid black;
+    
     display: flex;
     justify-content: center;
     align-items: center;
