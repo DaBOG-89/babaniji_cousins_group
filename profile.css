@@ -104,4 +104,8 @@ button:hover {
         margin: 10px;
         text-align: center;
     }
+
+    button {
+        margin: 0px -50px;
+    }
 }

@@ -40,19 +40,10 @@
         color: rgb(150, 23, 1);
     }
 
-    a:link {
-        color: white;
-        text-decoration: none;
-        font-size: 30pt;
-    }
-
-    a:hover {
-        color: rgb(150, 23, 1);
-        font-size: 35pt;
-    }
-
     h2 {
         display: none;
+        color: rgb(150, 23, 1);
+        font-size: 35pt;
     }
 
     @media (max-width: 1020px) {
@@ -88,7 +79,7 @@
     </div>
 
     <p class="display"></p>
-    <h2><a href="main_page.html">Welcome. <br> Click Me</a></h2>
+    <h2 class="welcome">Welcome.</h2>
 </body>
 
 <Script>
@@ -132,9 +123,15 @@
         if (malenames.includes(firstName) && surname.includes(lastName) && password.includes(passWord)) { 
             document.querySelector("p.display").innerHTML = message1;
             document.querySelector("h2").style.display = "block";
+            setTimeout(function () {
+                window.location.href = "main_page.html";
+            }, 3000);
         } else if (femalenames.includes(firstName) && surname.includes(lastName) && password.includes(passWord)) {
             $("p.display").html(message2);
             document.querySelector("h2").style.display = "block";
+            setTimeout(function () {
+                window.location.href = "main_page.html";
+            }, 3000);
         } else if (bastard.includes(firstName) && surname.includes(lastName)) {   
             $("p.display").html("Adetoro " + lastName + ", You are a <br> REAL BASTARD!!!");
         } else if (firstName === "" || lastName === "" || passWord === "") {
