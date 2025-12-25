@@ -91,22 +91,8 @@
         display: none;
     }
 
-    @media(min-width:768px) and (max-width:1290px) {
-        header {
-           font-size: 12px;
-        }
-        nav {
-            gap: 0vh;
-            font-size: 12px;
-            margin-left: 25px;
-        }
-        iframe {
-            aspect-ratio: 1/1;
-            width: 100%;
-        }
-    }
-
-    @media (max-width:768px) {
+    
+    @media (max-width:600px) {
         header {
            font-size: 12px;
         }
@@ -126,7 +112,7 @@
             margin-left: 70%;
             border-radius: 0px;
             text-align: right;
-            font-size: 12px;
+            
              position: absolute;
             z-index: 1;
         }
@@ -173,7 +159,7 @@
                 <a href="album_page.html" target="display"><p>Album</p></a>
                 <a href="index.html"><p>Log Out</p></a>
             </nav>
-            <button type="button" class="media_button" onclick="toggle()">&#9776;</button>
+            <button type="button" class="media_button">&#9776;</button>
         </header>
             <nav class="media_nav">
                 <a href="landing_page.html" target="display"><p>Home</p></a>

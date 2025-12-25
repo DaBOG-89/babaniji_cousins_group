@@ -125,13 +125,13 @@
             document.querySelector("h2").style.display = "block";
             setTimeout(function () {
                 window.location.href = "main_page.html";
-            }, 3000);
+            }, 2000);
         } else if (femalenames.includes(firstName) && surname.includes(lastName) && password.includes(passWord)) {
             $("p.display").html(message2);
             document.querySelector("h2").style.display = "block";
             setTimeout(function () {
                 window.location.href = "main_page.html";
-            }, 3000);
+            }, 2000);
         } else if (bastard.includes(firstName) && surname.includes(lastName)) {   
             $("p.display").html("Adetoro " + lastName + ", You are a <br> REAL BASTARD!!!");
         } else if (firstName === "" || lastName === "" || passWord === "") {
